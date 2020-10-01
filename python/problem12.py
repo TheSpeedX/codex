@@ -15,7 +15,7 @@ def factorCount(n):
 			d[i] = c
 		if n <= i:
 			break
-	s = 1
+	t = 1
 	for i in d.values():
 		t *= (i+1)
 	return t
