@@ -5,7 +5,7 @@ public class problem17
       "eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
 
    public static String[] tens = 
-   {"","ten","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety"};
+   {"","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
 
    public static String[] hundreds = 
    {"","onehundred","twohundred","threehundred","fourhundred","fivehundred","sixhundred",
