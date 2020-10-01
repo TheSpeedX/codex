@@ -1,4 +1,4 @@
-public class PE023 {
+public class Problem_23 {
 	public static void main(String[] args){
 		int sum = 0;
 		boolean[] abundant = new boolean[28124];
