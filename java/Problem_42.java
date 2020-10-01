@@ -1,27 +1,49 @@
 import java.io.*;
-import java.util.*;
 
-public class Solution {
+public class PE042 {
+	public static void main(String[] args){
+		String[] names = new String[]{};
+		int count = 0;
+		BufferedReader reader = null;
+		
+		try {
+		    reader = new BufferedReader(new FileReader(new File("PE042_words.txt")));
+		    String text = null;
 
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int T=sc.nextInt();
-        while(T-- >0){
-            long n=sc.nextLong();
-            long position1=Math.round((-1+Math.sqrt(1+8*n))/2);
-            long position2=Math.round(-1-Math.sqrt(1+8*n))/-2;
-               long nthTerm=position1*(position1+1)/2;
-                if(n==nthTerm){
-                    System.out.println(position1);
-                    continue;
-                }
-            nthTerm=position2*(position2+1)/2;
-                if(n==nthTerm){
-                    System.out.println(position2);
-                }
-            else{
-            System.out.println("-1");    
-            }
-        }
-    }
+		    while ((text = reader.readLine()) != null) {
+		    	text = text.substring(1, text.length() - 1);
+		        names = text.split("\",\"");
+		        for(int i = 0; i < names.length; i++) {
+		        	int numericValue = 0;
+		        	for(int j = 0; j < names[i].length(); j++) {
+		        		numericValue += (names[i].charAt(j) - 'A') + 1;
+		        	}
+		        	if(isTriangle(numericValue)) {
+		        		count++;
+		        	}
+		        }
+		        System.out.println(count);
+		    }
+		} catch (FileNotFoundException e) {
+		    e.printStackTrace();
+		} catch (IOException e) {
+		    e.printStackTrace();
+		} finally {
+		    try {
+		        if (reader != null) {
+		            reader.close();
+		        }
+		    } catch (IOException e) {
+		    }
+		}
+	}
+	
+	public static boolean isTriangle(int n) {
+		for(int i = 0; 0.5 * i * (i + 1) <= n; i++) {
+			if(0.5 * i * (i + 1) == n) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
