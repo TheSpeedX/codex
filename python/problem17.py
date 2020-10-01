@@ -22,7 +22,6 @@ def number_to_english(n: int) -> str:
 
 
 def solve():
-    """ Compute the answer to Project Euler's problem #17 """
     target = 1000
     answer = 0
     for i in range(target):
@@ -30,5 +29,5 @@ def solve():
         answer += len(words)
     return answer
 
-solve()
+print(solve())
 #expected_answer = 21124
