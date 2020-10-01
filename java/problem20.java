@@ -1,46 +1,49 @@
-import java.math.BigInteger;
+import java.util.*; 
+public class problem20{ 
 
-public class problem20 {
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		System.out.println("Find the sum of the digits in the number 100!\n");
-		int n = 20;
-		if (args.length == 1) {
-			try {
-				n = Integer.parseInt(args[0]);
-			} catch (Exception e) {
-				System.out.println("arg parse error. will use default n=" + n
-						+ "\n\n");
-			}
-		}
-		problem20 euler = new problem20();
-		euler.sumDigits(euler.getFactorial(n).toString());
-
-	}
-
-	public BigInteger getFactorial(int n) {
-		if (n < 0) {
-			return BigInteger.ZERO;
-		} else if (n > 0) {
-			BigInteger factorial = BigInteger.ONE;
-			for (int i = 1; i <= n; i++) {
-				factorial = factorial.multiply(BigInteger.valueOf(i));
-			}
-			return factorial;
-		} else {
-			return BigInteger.ONE;
-		}
-	}
-
-	public void sumDigits(String s) {
-		long sum = 0;
-		for (int i = 0; i < s.length(); i++) {
-			sum += Long.parseLong(s.substring(i, i + 1));
-			System.out.print(s.charAt(i)+"|");
-		}
-		System.out.println("\n"+sum);
-	}
-}
+static ArrayList<Integer> v=new ArrayList<Integer>(); 
+static void multiply(int x)  
+{  
+    int carry = 0;  
+    int size = v.size();  
+    for (int i = 0 ; i < size ; i++)  
+    {  
+        // Calculate res + prev carry  
+        int res = carry + v.get(i) * x;  
+  
+        // updation at ith position  
+        v.set(i,res % 10);  
+        carry = res / 10;  
+    }  
+    while (carry != 0)  
+    {  
+        v.add(carry % 10);  
+        carry /= 10;  
+    }  
+}  
+  
+// Returns sum of digits in n!  
+static int findSumOfDigits(int n)  
+{  
+    v.add(1); // adds 1 to the end  
+  
+    // One by one multiply i to current vector  
+    // and update the vector.  
+    for (int i=1; i<=n; i++)  
+        multiply(i);  
+  
+    // Find sum of digits in vector v[]  
+    int sum = 0;  
+    int size = v.size();  
+    for (int i = 0 ; i < size ; i++)  
+        sum += v.get(i);  
+    return sum;  
+}  
+  
+// Driver code  
+public static void main(String[] args)  
+{  
+    int n = 100;  
+    System.out.println(findSumOfDigits(n));  
+}  
+} 
