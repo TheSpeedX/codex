@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class PE042 {
+public class Problem_42 {
 	public static void main(String[] args){
 		String[] names = new String[]{};
 		int count = 0;
