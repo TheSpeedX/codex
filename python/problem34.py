@@ -8,9 +8,14 @@ Created on Thu Oct  1 22:33:50 2020
 # Problem 34
 def factorial(num):
     product = num
-    for i in range(2, num):
-        product *= i
-    return product
+    if product==0:
+        return 1
+    elif product==1:
+        return 1
+    else:
+        for i in range(2, num):
+            product *= i
+        return product
 
 def check_sum(number):
     list_digits = list(str(number))
@@ -24,7 +29,7 @@ def find_final_sum():
     final_list = []
     final_sum = 0
     counter = 3
-    while counter < 1499999:
+    while counter < 50000:
         if check_sum(counter):
             final_list.append(counter)
             counter += 1
