@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class Problem_42 {
+class Problem_42 {
 	public static void main(String[] args){
 		String[] names = new String[]{};
 		int count = 0;

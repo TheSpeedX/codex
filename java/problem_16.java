@@ -1,6 +1,6 @@
 import java.math.BigInteger;
 
-public class problem16 {
+class problem16 {
  public static void main(String[]args){
   BigInteger mul=new BigInteger("1");
   BigInteger bg=new BigInteger("2");

@@ -1,4 +1,4 @@
-public class problem17
+class problem17
 {
    public static String[] ones = 
    { "","one","two","three","four","five","six","seven","eight","nine","ten",

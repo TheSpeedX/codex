@@ -4,7 +4,7 @@
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
  */
-public class Problem_5 {
+class Problem_5 {
 	
 public static int LCM(int n1, int n2) {
 		

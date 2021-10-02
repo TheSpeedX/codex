@@ -1,5 +1,5 @@
 import java.util.*; 
-public class problem20{ 
+class problem20{ 
 
 static ArrayList<Integer> v=new ArrayList<Integer>(); 
 static void multiply(int x)  
