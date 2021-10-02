@@ -1,6 +1,6 @@
 import java.math.BigInteger;
 
-public class Main {
+ class Number {
 	public static void main(String[] args) {
 		long count = 0;
 		for (long i = 1; i < 10000; i++) {
