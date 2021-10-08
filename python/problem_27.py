@@ -1,16 +1,39 @@
-import prime
+import math
 
-max_pair = (0,0,0)
-for a in xrange(-999, 1000):
-    for b in xrange(max(2, 1-a), 1000): # b >= 2, a + b + 1 >= 2
-        n, count = 0, 0
-        while True:
-            v = n*n + a*n + b
-            prime._refresh(v)
-            if prime.isprime(v): count = count + 1
-            else: break
-            n = n + 1
-        if count > max_pair[2]:
-            max_pair = (a,b,count)
 
-print max_pair[0] * max_pair[1]
+def isPrime(n):
+    if n <= 1:
+        return False
+    if n == 2:
+        return True
+    for i in range(3, math.floor(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+
+primes = []
+
+for i in range(1000):
+    if isPrime(i):
+        primes.append(i)
+
+longest = 0
+largestA = 0
+largestB = 0
+
+for a in range(-1000, 1000):
+    for b in primes:
+        n = 0
+        term = n ** 2 + a * n + b
+
+        while isPrime(term):
+            term = n ** 2 + a * n + b
+            n += 1
+
+        if n > longest:
+            longest = n
+            largestA = a
+            largestB = b
+
+print(largestA * largestB)
