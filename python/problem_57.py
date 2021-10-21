@@ -22,10 +22,10 @@ for i in range(1000):
     q = b1
 
 # printing the counter
-print counter
+print (counter)
 
 # time at the end of program execution
 end = time.time()
 
 # total time of execution
-print end - start
+print (end - start)
