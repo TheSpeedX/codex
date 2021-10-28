@@ -27,7 +27,7 @@ all_numbers = [1]
 
 # While loop, to loop until we reach the last number
 while ratio > 0.1:
-    for j in xrange(4):
+    for j in range(4):
         # generating the value of n for 2n+1
         i += gap
         # generating the odd number
